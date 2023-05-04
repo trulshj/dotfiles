@@ -35,7 +35,7 @@ brew 'yarn'
 
 # Applications
 cask 'arc'
-cask 'alacritty'
+cask 'iterm2'
 cask 'raycast'
 cask 'bitwarden'
 cask 'discord'
