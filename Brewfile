@@ -2,6 +2,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-drivers"
 tap "FelixKratz/formulae"
+tap "koekeishiya/formulae"
 
 # Binaries
 brew 'bat'
