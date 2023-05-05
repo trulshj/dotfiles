@@ -32,6 +32,8 @@ brew 'n'
 brew 'mysql'
 brew 'redis'
 brew 'yarn'
+brew 'kubectl'
+brew 'minikube'
 
 # Applications
 cask 'arc'
