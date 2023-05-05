@@ -8,7 +8,9 @@ tap "koekeishiya/formulae"
 brew 'bat'
 brew 'exa'
 brew 'jq'
+brew 'gh'
 brew 'mas'
+brew 'switchaudio-osx'
 brew 'ffmpeg'
 brew 'fzf'
 brew 'tmux'
@@ -53,6 +55,7 @@ cask 'slack'
 cask 'visual-studio-code'
 cask 'microsoft-teams'
 cask 'obsidian'
+cask 'sf-symbols'
 
 # Fonts
 cask 'font-fira-code-nerd-font'
