@@ -23,9 +23,10 @@ echo "Setting up .gitconfig..."
 ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 
 echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 ln -s $HOME/dotfiles/zsh/aliases.zsh $ZSH_CUSTOM/aliases.zsh
 ln -s $HOME/dotfiles/zsh/paths.zsh $ZSH_CUSTOM/paths.zsh
+ln -s $HOME/dotfiles/zsh/vars.zsh $ZSH_CUSTOM/vars.zsh
 
 echo "Installing Node LTS..."
 sudo n lts
@@ -47,7 +48,8 @@ ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Setting up sketchybar..."
-ln -s $HOME/dotfiles/sketchybar $HOME/.config/sketchybar
+ln -s $HOME/dotfiles/sketchybar/ $HOME/.config/sketchybar
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 brew services start sketchybar
 
 echo "Setting up nvim..."

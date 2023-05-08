@@ -6,6 +6,10 @@ local plugins = {
         "rust-analyzer"
       }
     }
+  },
+  {
+    "github/copilot.vim",
+    lazy = false
   }
 }
 return plugins
