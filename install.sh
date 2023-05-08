@@ -52,3 +52,10 @@ brew services start sketchybar
 
 echo "Setting up nvim..."
 ln -s $HOME/dotfiles/nvim/ $HOME/.config/nvim
+
+echo "Setting Apple Defaults..."
+defaults write com.apple.finder CreateDesktop false
+defaults write com.apple.finder ShowPathbar true
+defaults write com.apple.finder AppleShowAllFiles true
+defaults write com.apple.finder ShowStatusBar true
+killall Finder
