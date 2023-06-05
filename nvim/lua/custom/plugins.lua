@@ -3,7 +3,9 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "rust-analyzer"
+        "rust-analyzer",
+        "typescript-language-server",
+        "zls"
       }
     }
   },

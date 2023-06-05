@@ -60,4 +60,5 @@ defaults write com.apple.finder CreateDesktop false
 defaults write com.apple.finder ShowPathbar true
 defaults write com.apple.finder AppleShowAllFiles true
 defaults write com.apple.finder ShowStatusBar true
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 killall Finder
