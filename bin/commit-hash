@@ -1,0 +1,3 @@
+#!/bin/sh
+# Lists out commits and copies the hash of the selected commit to the clipboard
+git log --oneline | gum filter | cut -d' ' -f1 | pbcopy

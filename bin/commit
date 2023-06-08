@@ -1,7 +1,10 @@
 #!/bin/sh
 TYPE=$(cat commit_types.txt | gum filter --placeholder "Type of change")
 
+# Exit if we didn't select a type
+test -n "$TYPE" || exit 1
+
 SUMMARY=$(gum input --width 50 --value "$TYPE: " --placeholder "Summary of changes")
 DESCRIPTION=$(gum write --width 80 --placeholder "Details of this change (CTRL+D to finish)")
 
-git commit -m "$SUMMARY" -m "$DESCRIPTION"
+gum confirm "Commit changes?\n$SUMMARY" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
