@@ -7,4 +7,4 @@ test -n "$TYPE" || exit 1
 SUMMARY=$(gum input --width 50 --value "$TYPE: " --placeholder "Summary of changes")
 DESCRIPTION=$(gum write --width 80 --placeholder "Details of this change (CTRL+D to finish)")
 
-gum confirm "Commit changes?\n$SUMMARY" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
