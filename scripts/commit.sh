@@ -1,9 +1,7 @@
 #!/bin/sh
+TYPE=$(cat commit_types.txt | gum filter --placeholder "Type of change")
 
-TYPE=$(gum choose "feat" "fix" "refactor" "chore" "docs" "style" "test" "revert")
+SUMMARY=$(gum input --width 50 --value "$TYPE: " --placeholder "Summary of changes")
+DESCRIPTION=$(gum write --width 80 --placeholder "Details of this change (CTRL+D to finish)")
 
-SUMMARY=$(gum input --value "$TYPE: " --placeholder "Summary of this change")
-DESCRIPTION=$(gum write --placeholder "Details of this change (CTRL+D to finish)")
-
-# Commit these changes
-gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+git commit -m "$SUMMARY" -m "$DESCRIPTION"
