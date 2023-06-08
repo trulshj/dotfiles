@@ -21,6 +21,9 @@ brew 'skhd'
 brew 'starship'
 brew 'koekeishiya/formulae/yabai'
 brew 'sketchybar'
+brew 'ripgrep'
+brew 'ncspot'
+brew 'gum'
 
 # Developer Tools
 brew 'azure-cli'
