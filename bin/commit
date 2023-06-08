@@ -1,5 +1,5 @@
 #!/bin/sh
-TYPE=$(cat commit_types.txt | gum filter --placeholder "Type of change")
+TYPE=$(cat "$HOME/dotfiles/bin/commit_types.txt" | gum filter --placeholder "Type of change")
 
 # Exit if we didn't select a type
 test -n "$TYPE" || exit 1
