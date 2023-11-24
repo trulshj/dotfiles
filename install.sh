@@ -37,20 +37,9 @@ source $HOME/.cargo/env
 rustup toolchain install stable
 rustup default stable
 
-echo "Installing yabai & skhd..."
-ln -s $HOME/dotfiles/.yabairc $HOME/.yabairc
-ln -s $HOME/dotfiles/.skhdrc $HOME/.skhdrc
-yabai --start-service
-skhd --start-service
-
 echo "Settup up tmux..."
 ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-echo "Setting up sketchybar..."
-ln -s $HOME/dotfiles/sketchybar/ $HOME/.config/sketchybar
-curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
-brew services start sketchybar
 
 echo "Setting up nvim..."
 ln -s $HOME/dotfiles/nvim/ $HOME/.config/nvim
