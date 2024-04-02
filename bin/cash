@@ -1,3 +1,22 @@
-#!/bin/sh
-# Lists out commits and copies the hash of the selected commit to the clipboard
-git log --oneline | gum filter | cut -d' ' -f1 | pbcopy
+#!/bin/bash
+
+# Function to check if the given directory is a Git repository
+is_git_repo() {
+    git -C "$1" rev-parse --is-inside-work-tree >/dev/null 2>&1
+}
+
+# Check if a directory is provided as an argument, otherwise, use the current directory
+if [ $# -eq 1 ]; then
+    directory="$1"
+else
+    directory="."
+fi
+
+# Check if the directory is a Git repository
+if ! is_git_repo "$directory"; then
+    echo "Error: '$directory' is not a Git repository" >&2
+    exit 1
+fi
+
+# List out commits, select one, and copy its hash to the clipboard
+git -C "$directory" log --oneline | gum filter --placeholder "Select commit" | cut -d' ' -f1 | pbcopy
