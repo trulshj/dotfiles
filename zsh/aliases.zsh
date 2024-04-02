@@ -1,3 +1,6 @@
+# better cd
+alias cd='z'
+
 # better ls
 alias ls='exa'
 alias ll='exa -l'
