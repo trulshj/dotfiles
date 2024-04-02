@@ -1,10 +1,25 @@
-#!/bin/sh
-TYPE=$(cat "$HOME/dotfiles/bin/commit_types.txt" | gum filter --placeholder "Type of change")
+#!/bin/bash
 
-# Exit if we didn't select a type
-test -n "$TYPE" || exit 1
+# Define the path to the commit types file
+COMMIT_TYPES_FILE="$HOME/dotfiles/bin/commit_types.txt"
 
+# Read commit types from the file
+TYPES=$(<"$COMMIT_TYPES_FILE")
+
+# Select the type of change
+TYPE=$(echo "$TYPES" | gum filter --placeholder "Type of change")
+
+# Exit if no type is selected
+[[ -n "$TYPE" ]] || exit 1
+
+# Input summary of changes
 SUMMARY=$(gum input --width 50 --value "$TYPE: " --placeholder "Summary of changes")
+
+# Input details of the change
 DESCRIPTION=$(gum write --width 80 --placeholder "Details of this change (CTRL+D to finish)")
 
-gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
+# Confirm the commit
+if gum confirm "Commit changes?"; then
+    # Commit changes
+    git commit -m "$SUMMARY" -m "$DESCRIPTION"
+fi
