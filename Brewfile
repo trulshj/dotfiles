@@ -6,7 +6,6 @@ tap "koekeishiya/formulae"
 
 # Binaries
 brew 'bat'
-brew 'exa'
 brew 'jq'
 brew 'gh'
 brew 'mas'

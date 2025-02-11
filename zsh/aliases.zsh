@@ -34,3 +34,6 @@ alias stg='samba-tool group'
 # kubernetes
 alias k='kubectl'
 
+# exercism
+alias exs='exercism submit'
+alias mxta="mix test --include pending"
