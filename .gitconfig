@@ -1,6 +1,6 @@
 [user]
-	email = thj@variant.no
-	name = Truls Henrik Jakobsen
+	email = post@truls.dev
+	name = Truls Henrik
 [core]
 	excludesfile = ~/dotfiles/.gitignore_global
 [init]
@@ -16,3 +16,6 @@
 	autoSetupRemote = true
 [alias]
 	yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
+[http]
+	postBuffer = 524288000
+	version = HTTP/1.1

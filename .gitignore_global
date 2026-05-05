@@ -42,4 +42,4 @@ Thumbs.db
 # Secrets #
 *.env
 
-
+.claude/
